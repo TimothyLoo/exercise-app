@@ -3,18 +3,20 @@
 # Use an official Node runtime as a parent image
 FROM node:alpine
 
+RUN apk add --no-cache git
+
 # Set the working directory to /app
 WORKDIR /app
 
 # Copy the rest of the application code to the container
-#COPY package.json .
-#COPY .env ./.env
+COPY package.json .
+COPY .env ./.env
 
 # Install app dependencies
-#RUN npm install
+RUN npm install
 
 # Expose the port that the application listens on
 EXPOSE ${CLIENT_PORT}
 
 # Start the application
-#CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev"]

@@ -1,0 +1,32 @@
+{
+  "name": "Vite App DevContainer (Compose)",
+
+  // Use docker-compose instead of dockerFile
+  "dockerComposeFile": "../docker-compose.yml",
+
+  // The service in docker-compose.yml you want to attach to
+  "service": "exercise-app",
+
+  // Root folder to mount into the container
+  "workspaceFolder": "/app",
+
+  // Forward Vite dev server port
+  "forwardPorts": [3069],
+
+  // After container is created, install deps
+  "postCreateCommand": "npm install",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+
+  // Allows Docker CLI usage inside DevContainer
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ]
+}
