@@ -1,0 +1,28 @@
+services:
+  # vite/react application container
+  exercise-app:
+    container_name: exercise-app
+    image: exercise-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - .env:/app/.env
+      - client_data:/app/node_modules
+    ports:
+      - ${CLIENT_PORT}:${CLIENT_PORT}
+    healthcheck:
+      test: ["CMD", "curl", "http://localhost:${CLIENT_PORT}"]
+      interval: 99s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  client_data:
+    driver: local
+    name: exercise-app-client-data
+
+networks:
+  default:
+    name: exercise-app-network

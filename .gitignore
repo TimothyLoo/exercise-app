@@ -137,3 +137,11 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# macOS & Windows system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Lockfile (ignore if you prefer yarn lock only)
+package-lock.json
