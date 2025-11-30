@@ -15,9 +15,9 @@ export default defineConfig({
       injectRegister: 'auto',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Whiskey App',
-        short_name: 'WhiskeyApp',
-        description: 'A Vite-powered PWA deployed to GitHub Pages',
+        name: 'Exercise App',
+        short_name: 'ExerciseApp',
+        description: 'An app that shows various exercises.',
         icons: [
           {
             src: 'icons/icon-48x48.png',

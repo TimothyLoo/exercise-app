@@ -16,7 +16,7 @@ COPY .env ./.env
 RUN npm install
 
 # Expose the port that the application listens on
-EXPOSE ${CLIENT_PORT}
+EXPOSE ${CLIENT_PORT} 4173
 
 # Start the application
 CMD ["npm", "run", "dev"]
