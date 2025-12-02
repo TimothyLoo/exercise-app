@@ -1,0 +1,15 @@
+# Simple Nginx container to serve static files
+
+FROM nginx:stable-alpine
+
+# Remove default site (optional)
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy your already-built files into Nginx
+COPY dist/ /usr/share/nginx/html/
+
+# Expose default HTTP port
+EXPOSE 80
+
+# Start Nginx in foreground
+CMD ["nginx", "-g", "daemon off;"]

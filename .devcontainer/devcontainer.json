@@ -2,7 +2,7 @@
   "name": "Vite App DevContainer (Compose)",
 
   // Use docker-compose instead of dockerFile
-  "dockerComposeFile": "../docker-compose.yml",
+  "dockerComposeFile": "../docker-compose.dev.yml",
 
   // The service in docker-compose.yml you want to attach to
   "service": "exercise-app",
