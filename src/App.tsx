@@ -1,9 +1,9 @@
-
+import PoseTracker from "./pages/PoseTracker"
 
 function App() {
 
   return (
-   <div>Hello Exercise World!</div>
+   <PoseTracker />
   )
 }
 
